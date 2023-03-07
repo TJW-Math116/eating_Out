@@ -45,4 +45,17 @@ barchartGC(~race + eatout,data=mydata, type="percent")
 The chart seems to show that white people eat out more than the other two groups, and the other races eat out more than black people.
 
 
+```{r}
+table1 <- xtabs(~race + eatout, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
+The numerical summary also indicates that whites eat out more than the other two groups, and that the "other" category eats out more than blacks.
+
+
+```{r}
+fisherXY(mydata$race,mydata$eatout)
+```
+
+The only observed difference based on the p-value results is between the whites and the blacks.  The p-values for the other comparisons were high, indicating no observable difference between black and other and between white and other.
